@@ -1,5 +1,5 @@
-local idarbnUrl = "https://raw.githubusercontent.com/DarThunder/iDar-BigNum/refs/heads/main/src/"
-local installDir = "idar-cod/"
+local idarCodecsUrl = "https://raw.githubusercontent.com/DarThunder/iDar-Codec/refs/heads/main/src/huffman/"
+local installDir = "idar-cod/huffman/"
 
 local function checkInternet()
     local testUrl = "http://www.google.com"
@@ -41,17 +41,25 @@ if not checkInternet() then
 end
 
 local modules = {
-    "bigNum"
+    "init",
+    "helpers/codes",
+    "helpers/context",
+    "helpers/frequency",
+    "structures/heap",
+    "structures/node",
+    "structures/tree",
+    "utils/bitstream",
+    "utils/serialiazer",
 }
 
 ensureDirectory(installDir)
 
 local success = true
 
-print("Downloading modules...")
+print("Downloading iDar-Codec modules...")
 for _, currentModule in ipairs(modules) do
     print(string.format("Trying to install module '%s.lua'", currentModule))
-    local url = idarbnUrl .. currentModule .. ".lua"
+    local url = idarCodecsUrl .. currentModule .. ".lua"
 
     local fullPath = installDir .. currentModule
     local pathWithoutFile = string.match(fullPath, "(.+)/[^/]+$")
@@ -76,4 +84,4 @@ for _, currentModule in ipairs(modules) do
     end
 end
 if success then shell.run("rm", "installer.lua") else shell.run("rm", installDir) end
-print(success and "iDar BigNum installed correctly" or "Could not install iDar BigNum, check your internet connection and try again.")
+print(success and "iDar Codec installed correctly" or "Could not install iDar Codec, check your internet connection and try again.")

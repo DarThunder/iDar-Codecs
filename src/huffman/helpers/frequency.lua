@@ -15,7 +15,7 @@ function Frequency.analyze(context)
 end
 
 function Frequency.buildNodeList(context)
-    local Node = require("idar-cod.node")
+    local Node = require("idar-cod.huffman.structures.node")
     local nodes = {}
 
     for char, freq in pairs(context.frequency_table) do

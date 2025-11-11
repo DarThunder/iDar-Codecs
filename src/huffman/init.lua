@@ -1,9 +1,9 @@
-local Context = require("idar-cod.context")
-local Frequency = require("idar-cod.frequency")
-local Tree = require("idar-cod.tree")
-local Codes = require("idar-cod.codes")
-local BitStream = require("idar-cod.bitstream")
-local Serializer = require("idar-cod.serialiazer")
+local Context = require("idar-cod.huffman.helpers.context")
+local Frequency = require("idar-cod.huffman.helpers.frequency")
+local Tree = require("idar-cod.huffman.structures.tree")
+local Codes = require("idar-cod.huffman.helpers.codes")
+local BitStream = require("idar-cod.huffman.utils.bitstream")
+local Serializer = require("idar-cod.huffman.utils.serialiazer")
 
 local Huffman = {}
 

@@ -1,5 +1,5 @@
-local Node = require("idar-cod.node")
-local MinHeap = require("idar-cod.heap")
+local Node = require("idar-cod.huffman.structures.node")
+local MinHeap = require("idar-cod.huffman.structures.heap")
 
 local Tree = {}
 Tree.__index = Tree
