@@ -52,3 +52,20 @@
 - Users can now successfully `require("idar-cod.huffman.init")` after installation
 
 **Note**: Sometimes the most "obvious" issues (like file paths) are the ones that slip through! The library architecture was solid - just needed the plumbing connected properly.
+
+### v1.0.2-beta
+
+#### Security
+
+- **Fixed a major RCE vulnerability** in the table deserializer. Huge W.
+
+#### Technical Details
+
+- The old deserializer (`utils/serialiazer.lua`) was using `load()` to parse tables, which basically meant _any_ sketchy compressed data could run arbitrary code. Not very slay.
+- It’s now swapped out for a safe, recursive, canonical JSON-style parser that only handles actual data (tables, strings, numbers) and can’t execute code at all.
+- Bonus perk: the new serializer is canonical (keys get sorted alphabetically), so the output is always deterministic — goodbye inconsistent hashes.
+
+#### Impact
+
+- **Before**: Opening a malicious file could straight-up lead to Remote Code Execution.
+- **Now**: Decompression is fully safe, even with sus data sources.
