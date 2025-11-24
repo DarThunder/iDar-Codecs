@@ -1,11 +1,11 @@
-local Node = require("idar-cod.huffman.structures.node")
-local MinHeap = require("idar-cod.huffman.structures.heap")
+local Node = require("iDar.src.huffman.structures.node")
+local MinHeap = require("iDar.Structures.src.heap.init")
 
 local Tree = {}
 Tree.__index = Tree
 
 function Tree.build(context)
-    local nodes = MinHeap()
+    local nodes = MinHeap.new_min(context.frequency_list, function(a, b) return a.freq < b.freq end)
 
     for i = 1, #context.frequency_list do
         nodes:insert(context.frequency_list[i])

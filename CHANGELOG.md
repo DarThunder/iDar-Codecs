@@ -69,3 +69,20 @@
 
 - **Before**: Opening a malicious file could straight-up lead to Remote Code Execution.
 - **Now**: Decompression is fully safe, even with sus data sources.
+
+### v1.0.3-Beta
+
+#### Added
+
+- New require paths compatible with iDar-Pacman package structure
+- Support for absolute module paths: `require("iDar.Codecs.src.huffman.module")`
+
+#### Changed
+
+- Updated installation instructions to use iDar-Pacman as primary method
+- Restructured internal file organization for better package management
+
+#### Removed
+
+- Automated installer script (`installer.lua`)
+- Legacy installation method using `wget run`

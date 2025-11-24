@@ -34,24 +34,24 @@ iDar-Codecs is a high-performance compression library implementing Huffman codin
 
 ## Installation
 
-### Automated Installation:
+### Recommended Installation (via [`iDar-Pacman`](https://github.com/DarThunder/iDar-Pacman)):
 
 ```lua
-wget run https://raw.githubusercontent.com/DarThunder/iDar-Codecs/refs/heads/main/installer.lua
+pacman -S idar-codecs
 ```
 
 ### Manual Installation:
 
 1. Download the library files from the repository
-2. Place them in your ComputerCraft computer's directory
-3. Use `require("idar-cod.huffman.init")` to load the main module
+2. Place them in your ComputerCraft computer's directory (e.g directory/)
+3. Use `require("directory.module")` to load specific modules
 
 ## Usage
 
 ### Huffman Compression
 
 ```lua
-local Huffman = require("idar-cod.huffman.init")
+local Huffman = require("iDar.Codecs.src.huffman.init")
 
 -- Basic string compression
 local original_text = "The quick brown fox jumps over the lazy dog"
@@ -69,7 +69,7 @@ print(decompressed) -- Output: The quick brown fox jumps over the lazy dog
 ### Advanced Usage
 
 ```lua
-local Huffman = require("idar-cod.huffman.init")
+local Huffman = require("iDar.Codecs.src.huffman.init")
 
 -- Compressing tables
 local data_table = {

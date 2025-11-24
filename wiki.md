@@ -7,7 +7,7 @@ This module implements Huffman coding compression algorithm for efficient data c
 ## Installation
 
 ```lua
-local Huffman = require("idar-cod.huffman.init")
+local Huffman = require("iDar.Codecs.src.huffman.init")
 ```
 
 ## Core Functions
@@ -39,7 +39,7 @@ Compresses input data using Huffman coding algorithm.
 #### Example
 
 ```lua
-local Huffman = require("idar-cod.init")
+local Huffman = require("iDar.Codecs.src.huffman.init")
 
 -- compress a string (return a unified state)
 local text = "hello world"
@@ -77,7 +77,7 @@ Decompresses data that was compressed using Huffman coding.
 #### Example
 
 ```lua
-local Huffman = require("idar-cod.init")
+local Huffman = require("iDar.Codecs.src.huffman.init")
 
 -- Decompress (using the load state)
 local decompressed_string = Huffman.decompress(state_string)
@@ -97,7 +97,7 @@ print(original_number) -- 42
 For advanced control over the compression process, you can use the context directly:
 
 ```lua
-local Huffman = require("idar-cod.init")
+local Huffman = require("iDar.Codecs.src.huffman.init")
 
 -- Create context for manual processing
 local ctx = Huffman.createContext("sample text")
@@ -144,7 +144,7 @@ print("Compressed size: " .. stats.compressed_size)
 ## Example Workflow
 
 ```lua
-local Huffman = require("idar-cod.init")
+local Huffman = require("iDar.Codecs.src.huffman.init")
 
 -- Complete compression/decompression cycle
 local original_data = "The quick brown fox jumps over the lazy dog"
