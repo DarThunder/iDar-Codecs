@@ -86,3 +86,9 @@
 
 - Automated installer script (`installer.lua`)
 - Legacy installation method using `wget run`
+
+### v1.0.4-Beta
+
+#### Changed
+
+- Manifest updated for compatibility with iDar-Pacman Alpha v2
